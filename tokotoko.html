@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Precious Baobao! ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght=700&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ffb7b2;
+            --rose-gold: #e8a598;
+            --deep-heart: #ff4d6d;
+            --soft-bg: #fff5f5;
+            --text-color: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--soft-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* Hero Header Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+            position: relative;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--deep-heart);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: heartbeat 1.5s infinite alternate;
+        }
+
+        @keyframes heartbeat {
+            to { transform: scale(1.05); }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+
+        /* Floating Hearts Background */
+        .hearts-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--deep-heart);
+            margin-bottom: 40px;
+        }
+
+        /* Landscape Storybook Framework */
+        .book-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto;
+            perspective: 2000px;
+        }
+
+        .landscape-book {
+            display: flex;
+            width: 100%;
+            max-width: 1050px;
+            min-height: 580px;
+            background: #fff;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            border-radius: 12px;
+            position: relative;
+            border-left: 5px solid var(--rose-gold);
+            border-right: 5px solid var(--rose-gold);
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Page Flip Dynamic Scale Animation */
+        .landscape-book.flip-animation {
+            transform: rotateY(-5deg) scale(0.97);
+            opacity: 0.9;
+        }
+
+        /* Spine Center Crease Line */
+        .landscape-book::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0.02) 50%, rgba(0,0,0,0.15));
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+
+        /* Distinct Split Pages Layout */
+        .page {
+            width: 50%;
+            padding: 45px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            position: relative;
+            background-color: #ffffff;
+            z-index: 2;
+        }
+
+        .left-page {
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .right-page {
+            border-left: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .book-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.3rem;
+            color: var(--rose-gold);
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--primary-pink);
+            padding-bottom: 10px;
+        }
+
+        /* The Letter Area content formatting */
+        .book-content {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .book-paragraph {
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+
+        /* Landscape Photo Containers */
+        .book-photo-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .book-photo {
+            background: #fafafa;
+            padding: 10px 10px 18px 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            flex: 1;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .book-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 2px;
+            background-color: #ffe5ec; /* Fallback color if images are missing */
+        }
+
+        .book-photo-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.15rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--deep-heart);
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* Navigation Controls */
+        .book-controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background-color: var(--deep-heart);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+        }
+
+        .nav-btn.secondary {
+            background-color: var(--rose-gold);
+            box-shadow: 0 4px 15px rgba(232, 165, 152, 0.3);
+        }
+
+        .nav-btn.secondary:hover {
+            box-shadow: 0 6px 20px rgba(232, 165, 152, 0.4);
+        }
+
+        .page-number {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Music Controller Button */
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--deep-heart);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Touch Hint */
+        .interaction-hint {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.9rem;
+            color: #888;
+            animation: fadeToggle 2s infinite;
+        }
+
+        @keyframes fadeToggle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        footer {
+            background-color: #ffe5ec;
+            padding: 30px;
+            margin-top: 100px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        footer span {
+            color: var(--deep-heart);
+        }
+
+        /* Strictly hides standard content elements until needed */
+        .hidden-storage {
+            display: none !important;
+        }
+
+        /* Responsive stack for mobile/tablet screens */
+        @media (max-width: 900px) {
+            .landscape-book {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .landscape-book::after {
+                display: none;
+            }
+            .page {
+                width: 100%;
+                border-right: none;
+                border-left: none;
+                padding: 35px 25px;
+            }
+            .left-page {
+                border-bottom: 1px dashed var(--primary-pink);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="hbd.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" id="music-control-btn" onclick="toggleMusic(event)">🎵</button>
+
+    <header>
+        <div class="hearts-bg" id="hearts-container"></div>
+        <h1>Happy Birthday, My Precious! 🎉</h1>
+        <p>You mean the entire world to me</p>
+        <div class="interaction-hint" id="hint-text">✨ Tap anywhere on the screen for music ✨</div>
+    </header>
+
+    <div class="container">
+
+        <h2 class="section-title">My Letter To You</h2>
+        
+        <div class="book-container">
+            <div class="landscape-book" id="story-book">
+                
+                <div class="page left-page">
+                    <div class="book-title" id="left-page-title">Chapters of Us...</div>
+                    <div class="book-content" id="left-page-content">
+                        <div class="book-paragraph">Hai babe 😚
+
+happy birthday to you 🎉 ❤️, yeahh babe birthday i wish for babe for a good health, good wealth, good strength and all the good thing for my baobaoo😚❤️.
+
+i want to tell you again and again that how lucky i am to know and have you my baby ❤️, i didn't expect that i will find and get to know you at the last year of uni that time, i also glad that i make that move when helping babe at the volleyball hehe( i won't do that to another person again ya, only my babe).</div>
+                    </div>
+                    <div class="page-number" id="left-page-num">Page 1</div>
+                </div>
+
+                <div class="page right-page">
+                    <div class="book-title" id="right-page-title">Memories Cover</div>
+                    <div class="book-content" id="right-page-content">
+                        <div class="book-photo-container">
+                            <div class="book-photo">
+                                <img src="1.jpg" alt="before">
+                                <div class="book-photo-caption">before... </div>
+                            </div>
+                            <div class="book-photo">
+                                <img src="2.jpg" alt="after">
+                                <div class="book-photo-caption">after 😚</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-number" id="right-page-num">Page 2</div>
+                </div>
+
+            </div>
+
+            <div class="book-controls">
+                <button class="nav-btn" id="next-page-btn" onclick="flipToNextPage()">Next Page ➔</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hidden-storage">
+        <div id="p1-left-cache">
+            <div class="book-paragraph">Hai babe 😚
+
+happy birthday to you 🎉 ❤️, yeahh babe birthday i wish for babe for a good health, good wealth, good strength and all the good thing for my baobaoo😚❤️.
+
+i want to tell you again and again that how lucky i am to know and have you my baby ❤️, i didn't expect that i will find and get to know you at the last year of uni that time, i also glad that i make that move when helping babe at the volleyball hehe( i won't do that to another person again ya, only my babe).</div>
+        </div>
+        <div id="p1-right-cache">
+            <div class="book-photo-container">
+                <div class="book-photo">
+                    <img src="1.jpg" alt="before">
+                    <div class="book-photo-caption">before... </div>
+                </div>
+                <div class="book-photo">
+                    <img src="2.jpg" alt="after">
+                    <div class="book-photo-caption">after 😚</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p2-left-cache">
+            <div class="book-paragraph">i cherish our relationship and every moment that i got to spend my every single second with you babe, I'm looking forward for what the future will bring us and what every new moment for our relationship ❤️❤️</div>
+            
+            <div class="book-photo-container">
+                <div class="book-photo">
+                    <img src="3.jpg" alt="fs time drink with babe❤️">
+                    <div class="book-photo-caption">fs time drink with babe ❤️</div>
+                </div>
+                <div class="book-photo">
+                    <img src="4.jpg" alt="Us">
+                    <div class="book-photo-caption">our fav photo ✨</div>
+                </div>
+            </div>
+        </div>
+        <div id="p2-right-cache">
+            <div class="book-paragraph">and theast thing, I feel I'm the luckiest oerson to have you, you're really mean alot to me, you're so so precious to me, everytime I'm with you whether online or offline i always feel so lucky, and also i want to tell to you over and over again that i really love you and you're my favorite gorgeous baobao that i have ❤️
+
+cheers for everything and happy birthday 🎂</div>
+            <span class="signature">I love you so much, Ivan ❤️</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with <span>❤</span> by Elvren just for you.</p>
+    </footer>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-control-btn');
+        const hintText = document.getElementById('hint-text');
+        let musicStarted = false;
+        let currentPageView = 1;
+
+        // Smart Autoplay
+        document.body.addEventListener('click', () => {
+            if (!musicStarted) {
+                audio.play().then(() => {
+                    musicStarted = true;
+                    musicBtn.innerHTML = '⏸️';
+                    if(hintText) hintText.style.display = 'none';
+                }).catch(err => console.log("Audio play blocked initially:", err));
+            }
+        });
+
+        // Toggle music button
+        function toggleMusic(event) {
+            event.stopPropagation(); 
+            if (audio.paused) {
+                audio.play();
+                musicBtn.innerHTML = '⏸️';
+                if(hintText) hintText.style.display = 'none';
+                musicStarted = true;
+            } else {
+                audio.pause();
+                musicBtn.innerHTML = '🎵';
+            }
+        }
+
+        // Animation page flipper logic
+        function flipToNextPage() {
+            const bookElement = document.getElementById('story-book');
+            const navBtn = document.getElementById('next-page-btn');
+            
+            bookElement.classList.add('flip-animation');
+            
+            setTimeout(() => {
+                if (currentPageView === 1) {
+                    // Go to Page 3 & 4
+                    document.getElementById('left-page-title').innerText = "Our Growing Bond";
+                    document.getElementById('left-page-content').innerHTML = document.getElementById('p2-left-cache').innerHTML;
+                    
+                    document.getElementById('right-page-title').innerText = "Forever & Always";
+                    document.getElementById('right-page-content').innerHTML = document.getElementById('p2-right-cache').innerHTML;
+                    
+                    document.getElementById('left-page-num').innerText = "Page 3";
+                    document.getElementById('right-page-num').innerText = "Page 4";
+                    
+                    navBtn.innerHTML = "📑 Read From Beginning";
+                    navBtn.classList.add('secondary');
+                    currentPageView = 2;
+                } else {
+                    // Go back to Page 1 & 2
+                    document.getElementById('left-page-title').innerText = "Chapters of Us...";
+                    document.getElementById('left-page-content').innerHTML = document.getElementById('p1-left-cache').innerHTML;
+                    
+                    document.getElementById('right-page-title').innerText = "Memories Cover";
+                    document.getElementById('right-page-content').innerHTML = document.getElementById('p1-right-cache').innerHTML;
+                    
+                    document.getElementById('left-page-num').innerText = "Page 1";
+                    document.getElementById('right-page-num').innerText = "Page 2";
+                    
+                    navBtn.innerHTML = "Next Page ➔";
+                    navBtn.classList.remove('secondary');
+                    currentPageView = 1;
+                }
+                
+                setTimeout(() => {
+                    bookElement.classList.remove('flip-animation');
+                }, 100);
+                
+            }, 250);
+        }
+
+        // Floating hearts background loop
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            if(!container) return;
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.style.position = 'absolute';
+            heart.style.color = 'rgba(255, 77, 109, ' + (Math.random() * 0.4 + 0.1) + ')';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+            
+            container.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
